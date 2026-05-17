@@ -9,15 +9,15 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --pink: #734120;
-    --pink-light: #B5885E;
-    --pink-dark: #452816;
-    --cream: #E8D3B8;
-    --dark: #452816;
-    --dark2: #5a3520;
-    --yellow: #E0C49F;
+    --pink: #8B5E3C;
+    --pink-light: #C49A6C;
+    --pink-dark: #5C3317;
+    --cream: #F5EDE0;
+    --dark: #1C1008;
+    --dark2: #2E1A0A;
+    --yellow: #D4B896;
     --green: #2ECC71;
-    --grid: #e8007720;
+    --grid: #ffffff12;
     --font-display: 'Bebas Neue', sans-serif;
     --font-body: 'DM Sans', sans-serif;
   }
@@ -92,16 +92,16 @@
   /* HERO */
   .hero {
     margin-top: 60px;
-    min-height: 92vh;
+    min-height: 80vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     position: relative;
     overflow: hidden;
   }
 
   .hero-left {
     background: var(--dark);
-    padding: 5rem 3rem 5rem 4rem;
+    padding: 6rem 6rem 6rem 8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -216,81 +216,11 @@
     letter-spacing: 1px;
   }
 
-  .hero-right {
-    background: var(--pink);
-    background-image:
-      linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
-    background-size: 36px 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
-    position: relative;
-  }
 
-  .hero-shoe-card {
-    background: var(--cream);
-    border-radius: 24px;
-    padding: 2.5rem;
-    text-align: center;
-    position: relative;
-    max-width: 320px;
-    width: 100%;
-    box-shadow: 8px 8px 0 var(--dark);
-  }
-
-  .shoe-emoji {
-    font-size: 6rem;
-    display: block;
-    margin-bottom: 1rem;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-
-  .shoe-card-title {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    color: var(--dark);
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-  }
-
-  .shoe-card-sub {
-    font-size: 0.8rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  .smiley {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 80px;
-    height: 80px;
-    background: var(--yellow);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    border: 3px solid var(--dark);
-    animation: spin-smiley 8s linear infinite;
-  }
-
-  @keyframes spin-smiley {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 
   /* MARQUEE */
   .marquee-wrap {
-    background: var(--yellow);
+    background: #F5EDE0;
     border-top: 2px solid var(--dark);
     border-bottom: 2px solid var(--dark);
     overflow: hidden;
@@ -375,7 +305,7 @@
   }
 
   .service-card {
-    background: var(--dark2);
+    background: #261508;
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 16px;
     padding: 2rem;
@@ -553,8 +483,8 @@
   }
 
   .step-card {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 16px;
     padding: 2rem 1.5rem;
     text-align: center;
@@ -742,7 +672,7 @@
 
   /* FOOTER */
   footer {
-    background: #2e1a0e;
+    background: #120A04;
     padding: 3rem 4rem;
     display: flex;
     align-items: center;
@@ -847,7 +777,7 @@
   }
   .video-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2.5rem;
   }
@@ -875,7 +805,7 @@
   .photo-placeholder {
     border-radius: 12px;
     overflow: hidden;
-    background: #d9c4a8;
+    background: #EDE8E3;
     aspect-ratio: 3/4;
     position: relative;
     display: flex;
@@ -956,14 +886,6 @@
         <span class="stat-num">2hari</span>
         <span class="stat-label">Estimasi selesai</span>
       </div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-shoe-card">
-      <span class="shoe-emoji">👟</span>
-      <div class="shoe-card-title">FRESH & CLEAN</div>
-      <div class="shoe-card-sub">Sepatu baru lagi ✨</div>
-      <div class="smiley">😊</div>
     </div>
   </div>
 </section>
@@ -1047,7 +969,7 @@
 
     <div class="video-placeholder">
       <div class="video-inner">
-        <video src="7.mp4" controls width="100%"> 
+        <video src="7.mp4" controls width="100%">
         <!-- atau YouTube: <iframe src="https://www.youtube.com/embed/VIDEO_ID" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
         <div class="vp-icon">&#9654;</div>
         <div class="vp-label">VIDEO 2</div>
@@ -1066,22 +988,22 @@
 
   <div class="gallery-grid">
     <div class="photo-placeholder" data-label="FOTO 1">
-      <img src="1.jpg" alt=" 1">
+      <img src="1.jpg" alt=" 1"> 
     </div>
     <div class="photo-placeholder" data-label=" 2">
-      <img src="2.jpg" alt=" 2">
+      <img src="2.jpg" alt=" 2"> 
     </div>
     <div class="photo-placeholder" data-label=" 3">
-      <img src="3.jpg" alt=" 3">
+      <img src="3.jpg" alt=" 3"> 
     </div>
     <div class="photo-placeholder" data-label=" 4">
-      <img src="4.jpg" alt=" 4">
+      <img src="4.jpg" alt=" 4"> 
     </div>
     <div class="photo-placeholder" data-label=" 5">
-      <img src="5.jpg" alt="Foto 5">
+      <img src="5.jpg" alt="Foto 5"> 
     </div>
     <div class="photo-placeholder" data-label="FOTO 6">
-      <img src="8.jpg" alt="Foto 6">
+      <img src="8.jpg" alt="Foto 6"> 
     </div>
   </div>
 </section>
