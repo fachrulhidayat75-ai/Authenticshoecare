@@ -850,11 +850,41 @@
     .video-inner { min-height: 160px; }
   }
 
+
+  /* =========================================
+     PROMO MEMBER SECTION (TAMBAHAN BARU)
+     ========================================= */
+  .promo-section { background: var(--pink); color: white; text-align: center; padding: 4rem 2rem; }
+  .promo-section .section-title { color: white; font-size: clamp(2rem, 4vw, 3.5rem); }
+  .promo-form-container { max-width: 450px; margin: 2rem auto 0; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
+  .promo-form { display: flex; flex-direction: column; gap: 15px; }
+  .promo-input { padding: 12px 15px; border: none; border-radius: 6px; font-family: var(--font-body); font-size: 1rem; outline: none; }
+  .promo-input:focus { border: 2px solid var(--yellow); }
+  .btn-promo { background: var(--yellow); color: var(--dark); font-weight: 700; font-size: 1rem; letter-spacing: 1px; padding: 12px 15px; border: none; border-radius: 6px; cursor: pointer; text-transform: uppercase; transition: background 0.2s; }
+  .btn-promo:hover { background: #E0A678; }
+  .btn-promo:disabled { background: #ccc; cursor: not-allowed; }
+
+  .member-benefits { max-width: 650px; margin: 3rem auto 0; background: #ffffff; color: var(--dark); padding: 2.5rem; border-radius: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+  .member-benefits h3 { text-align: center; color: var(--pink); margin-bottom: 2rem; font-family: var(--font-display); font-size: 2rem; letter-spacing: 1px; }
+  .benefit-group { margin-bottom: 2rem; }
+  .benefit-group:last-child { margin-bottom: 0; }
+  .benefit-group h4 { font-size: 1.05rem; color: var(--dark); margin-bottom: 1rem; border-bottom: 2px dashed var(--pink-light); padding-bottom: 0.5rem; }
+  .benefit-item { background: var(--cream); padding: 1.2rem; border-radius: 10px; margin-bottom: 1rem; border: 1px solid rgba(42,21,6,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .benefit-item-text strong { display: block; color: var(--pink-dark); font-size: 1rem; margin-bottom: 0.3rem; }
+  .benefit-item-text p { font-size: 0.85rem; color: #666; margin-bottom: 0.2rem; }
+  .benefit-price { text-align: right; }
+  .benefit-price del { display: block; font-size: 0.85rem; color: #999; }
+  .benefit-price span { color: #C0392B; font-weight: 700; font-size: 1.3rem; font-family: var(--font-display); letter-spacing: 1px; }
+  
+  @media (max-width: 768px) {
+    .benefit-item { flex-direction: column; align-items: flex-start; }
+    .benefit-price { text-align: left; margin-top: 5px; }
+  }
+
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#"><span>Authentic</span> Shoe Care</a>
   <ul class="nav-links">
@@ -863,7 +893,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-badge">✦ Jasa Cuci Sepatu Terpercaya</div>
@@ -896,7 +925,6 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span class="marquee-item"><span class="marquee-dot"></span> DEEP CLEAN</span>
@@ -914,7 +942,6 @@
   </div>
 </div>
 
-<!-- LAYANAN DETAIL -->
 <section class="services-section section" id="layanan">
   <div class="section-tag">✦ Apa yang Kami Lakukan</div>
   <h2 class="section-title">LAYANAN KAMI</h2>
@@ -954,8 +981,84 @@
   </div>
 </section>
 
+<section class="promo-section" id="promo">
+  <div class="section-tag" style="color: var(--yellow); background: rgba(224,196,159,0.2);">✦ Penawaran Spesial</div>
+  <h2 class="section-title" style="color: white; margin-bottom: 10px;">GABUNG MEMBER EKSKLUSIF!</h2>
+  <p class="section-sub" style="color: rgba(255,255,255,0.8); margin: 0 auto;">
+    Daftarkan emailmu sekarang untuk menjadi Member Authentic Shoe Care.<br>Nikmati <strong>Welcome Offer</strong> perdana dan promo rutin via email.
+  </p>
 
-<!-- VIDEO SECTION -->
+  <div class="promo-form-container">
+    <form id="form-promo" class="promo-form">
+      <input type="text" name="nama" class="promo-input" placeholder="Nama Panggilan" required>
+      <input type="email" name="email" class="promo-input" placeholder="Alamat Email Aktif" required>
+      <button type="submit" class="btn-promo">Daftar Member Sekarang</button>
+    </form>
+    
+    <div id="pesan-sukses" style="display: none; margin-top: 15px; background: white; color: var(--green); padding: 10px; border-radius: 6px; font-weight: bold; font-size: 0.9rem;">
+      ✅ Berhasil bergabung! Welcome Offer sudah dikirim ke email kamu.
+    </div>
+  </div>
+
+  <div class="member-benefits">
+    <h3>🎁 Benefit Khusus Member</h3>
+    
+    <div class="benefit-group">
+      <h4>1. Welcome Offer (Strategi Akuisisi via Form Landing Page)</h4>
+      
+      <div class="benefit-item">
+        <div class="benefit-item-text">
+          <strong>Paket "Duo Clean" (Fokus Sepatu)</strong>
+          <p>Konsep: Cuci 2 pasang sepatu sekaligus.</p>
+        </div>
+        <div class="benefit-price">
+          <del>Harga Normal: Rp70.000</del>
+          <span>Promo: Rp59.000</span>
+          <p style="font-size: 0.75rem; color: #C0392B; margin-top: 2px;">(Diskon Rp11.000)</p>
+        </div>
+      </div>
+      
+      <div class="benefit-item">
+        <div class="benefit-item-text">
+          <strong>Paket "Starter Kit" (Lintas Kategori)</strong>
+          <p>Konsep: Cuci 1 Sepatu + 1 Topi.</p>
+        </div>
+        <div class="benefit-price">
+          <del>Harga Normal: Rp60.000</del>
+          <span>Promo: Rp49.000</span>
+          <p style="font-size: 0.75rem; color: #C0392B; margin-top: 2px;">(Diskon Rp11.000)</p>
+        </div>
+      </div>
+      
+      <div class="benefit-item">
+        <div class="benefit-item-text">
+          <strong>Paket "Head-to-Toe Refresh" (3 Item Lintas Kategori)</strong>
+          <p>Konsep: Cuci 1 Sepatu + 1 Topi + 1 Tas (Small/Medium).</p>
+        </div>
+        <div class="benefit-price">
+          <del>Harga Normal: Rp95.000</del>
+          <span>Promo: Rp79.000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefit-group">
+      <h4>2. Non-Welcome Offer (Strategi Retensi via Email Marketing)</h4>
+      
+      <div class="benefit-item">
+        <div class="benefit-item-text">
+          <strong>Paket "Head-to-Toe Refresh" (3 Item Lintas Kategori)</strong>
+          <p>Konsep: Cuci 1 Sepatu + 1 Topi + 1 Tas (Small/Medium).</p>
+        </div>
+        <div class="benefit-price">
+          <del>Harga Normal: Rp95.000</del>
+          <span>Promo: Rp79.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="video-section section">
   <div class="section-tag">✦ Lihat Hasilnya</div>
   <h2 class="section-title">HASIL NYATA</h2>
@@ -966,7 +1069,6 @@
     <div class="video-placeholder">
       <div class="video-inner">
         <video src="6.mp4" controls width="100%"> 
-        <!-- atau YouTube: <iframe src="https://www.youtube.com/embed/VIDEO_ID" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
         <div class="vp-icon">&#9654;</div>
         <div class="vp-label">VIDEO 1</div>
         <div class="vp-hint">&#128193; Ganti dengan video atau embed YouTube</div>
@@ -976,7 +1078,6 @@
     <div class="video-placeholder">
       <div class="video-inner">
         <video src="7.mp4" controls width="100%"> 
-        <!-- atau YouTube: <iframe src="https://www.youtube.com/embed/VIDEO_ID" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
         <div class="vp-icon">&#9654;</div>
         <div class="vp-label">VIDEO 2</div>
         <div class="vp-hint">&#128193; Ganti dengan video atau embed YouTube</div>
@@ -986,7 +1087,6 @@
   </div>
 </section>
 
-<!-- GALLERY SECTION -->
 <section class="gallery-section section">
   <div class="section-tag">✦ Before &amp; After</div>
   <h2 class="section-title">GALERI HASIL</h2>
@@ -1014,7 +1114,6 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how-section section" id="proses">
   <div class="section-tag">✦ Cara Kerja Kami</div>
   <h2 class="section-title">PROSESNYA MUDAH</h2>
@@ -1049,7 +1148,6 @@
 </section>
 
 
-<!-- CTA -->
 <section class="cta-section" id="order">
   <h2 class="cta-title">SIAP CUCI<br><span class="pink">SEPATUMU?</span></h2>
   <p class="cta-sub">Jangan biarkan sepatu favoritmu kusam. Hubungi kami sekarang dan dapatkan hasil terbaik.</p>
@@ -1062,12 +1160,56 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <a class="footer-logo" href="#"><span>Authentic</span> Shoe Care</a>
   <div class="footer-ig">Follow kami di Instagram: <strong>@authenticshoe.care</strong></div>
   <div class="footer-copy">© 2025 Authentic Shoe Care. All rights reserved.</div>
 </footer>
+
+<script>
+  // PENTING: Ganti URL di bawah ini dengan URL Google Apps Script yang kamu salin tadi
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxhRq9IdqWd3N5Xp5zVSI22wO6LDJ5O9LyfxVpyIJQsi7DKDxcHIXK44IvvSKz7174i/exec';
+  
+  const form = document.getElementById('form-promo');
+  const pesanSukses = document.getElementById('pesan-sukses');
+  const btnSubmit = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // Ubah status tombol saat loading
+    btnSubmit.innerHTML = 'MENGIRIM...';
+    btnSubmit.disabled = true;
+    btnSubmit.style.opacity = '0.7';
+
+    // Ambil data form
+    const formData = new FormData(form);
+
+    // Kirim ke Google Sheets
+    fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
+      .then(response => {
+        pesanSukses.style.display = 'block';
+        form.reset();
+        
+        // Kembalikan tombol seperti semula
+        btnSubmit.innerHTML = 'DAFTAR MEMBER SEKARANG';
+        btnSubmit.disabled = false;
+        btnSubmit.style.opacity = '1';
+        
+        // Hilangkan pesan sukses setelah 7 detik
+        setTimeout(() => {
+          pesanSukses.style.display = 'none';
+        }, 7000);
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert('Terjadi kesalahan jaringan, silakan coba lagi.');
+        btnSubmit.innerHTML = 'DAFTAR MEMBER SEKARANG';
+        btnSubmit.disabled = false;
+        btnSubmit.style.opacity = '1';
+      });
+  });
+</script>
 
 </body>
 </html>
